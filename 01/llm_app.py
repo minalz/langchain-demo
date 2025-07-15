@@ -1,9 +1,15 @@
+import os
+
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 from langchain_openai import ChatOpenAI
 
-llm = ChatOpenAI()
+llm = ChatOpenAI(
+    api_key=os.getenv("API-KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    model="qwen-plus"  # 模型名称可按需更换
+)
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "你是世界级的技术专家"),
