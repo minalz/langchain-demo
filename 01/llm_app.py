@@ -1,3 +1,4 @@
+from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 from langchain_openai import ChatOpenAI
@@ -9,7 +10,9 @@ prompt = ChatPromptTemplate.from_messages([
     ("user", "{input}")
 ])
 
-chain = prompt | llm
+output_parse = StrOutputParser()
+
+chain = prompt | llm | output_parse
 
 result = chain.invoke({"input": "帮我写一篇关于AI的技术文章，100个字"})
 print(result)
