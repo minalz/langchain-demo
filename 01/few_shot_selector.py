@@ -82,3 +82,30 @@ for example in selected_examples:
     print("\\n")
     for k, v in example.items():
         print(f"{k}：{v}")
+
+'''
+from langchain_community.embeddings import DashScopeEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain.prompts.example_selector import SemanticSimilarityExampleSelector
+
+# 使用阿里云百炼的嵌入模型
+embeddings = DashScopeEmbeddings(
+    model="text-embedding-v2"  # 阿里云百炼支持的文本嵌入模型
+)
+
+# 构建语义相似度示例选择器
+example_selector = SemanticSimilarityExampleSelector.from_examples(
+    examples,  # 你的示例列表
+    embeddings,
+    Chroma,    # 向量数据库
+    k=1        # 返回最相似的1个示例
+)
+
+默认环境变量：
+export DASHSCOPE_API_KEY=你的百炼API_KEY
+还需要安装：
+# 阿里云包
+pip install langchain-community dashscope
+# 本地内存矢量数据库
+pip install chromadb
+'''
