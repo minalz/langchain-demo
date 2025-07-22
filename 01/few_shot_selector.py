@@ -104,7 +104,7 @@ example_selector = SemanticSimilarityExampleSelector.from_examples(
 默认环境变量：
 export DASHSCOPE_API_KEY=你的百炼API_KEY
 还需要安装：
-# 阿里云包
+# 阿里云百炼包
 pip install langchain-community dashscope
 # 本地内存矢量数据库
 pip install chromadb
