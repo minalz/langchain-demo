@@ -83,6 +83,7 @@ for example in selected_examples:
     for k, v in example.items():
         print(f"{k}：{v}")
 
+
 '''
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.vectorstores import Chroma
