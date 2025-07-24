@@ -9,13 +9,11 @@ model = ChatOpenAI(
     model="qwen-plus"  # 模型名称可按需更换
 )
 
-
 async def async_stream():
     events = []
     async for event in model.astream_events("hello", version="v2"):
         events.append(event)
     print(events)
-
 
 # 运行异步流处理
 asyncio.run(async_stream())
