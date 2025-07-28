@@ -1,13 +1,12 @@
 import os
 
-from langchain_core.chat_history import BaseChatMessageHistory
 # 引入redis聊天消息存储类
 from langchain_community.chat_message_histories import RedisChatMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnableWithMessageHistory
 from langchain_openai import ChatOpenAI
+
 # 引入langchain_core.runnables.history
-from langchain_core.runnables import ConfigurableFieldSpec
 
 prompt = ChatPromptTemplate.from_messages([
     ("system",
