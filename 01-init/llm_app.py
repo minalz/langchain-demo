@@ -16,7 +16,6 @@ prompt = ChatPromptTemplate.from_messages([
     ("user", "{input}")
 ])
 
-
 output_parse = StrOutputParser()
 
 chain = prompt | llm | output_parse
