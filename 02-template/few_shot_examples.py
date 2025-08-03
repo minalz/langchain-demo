@@ -1,7 +1,6 @@
 from langchain.prompts.few_shot import FewShotPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
 
-
 examples = [
   {
     "question": "谁的寿命更长，穆罕默德·阿里还是艾伦·图灵？",
